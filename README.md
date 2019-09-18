@@ -41,4 +41,4 @@ documentation terhadap sebuah projek
 	http://localhost:8080/restoran/view/id-restoran/1
 
 4. Tambahkan 1 contoh restoran lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/restoran/viewall, apa yang akan ditampilkan? 
-	https://github.com/raniprtw/tutorial-app/issues/1#issuecomment-532763377
+	https://drive.google.com/file/d/1PCnwWfxjZrHGv3Ou81d3aklzu6Z1OhxO/view?usp=sharing
