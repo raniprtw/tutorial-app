@@ -52,9 +52,7 @@ public class RestoranServiceImpl implements RestoranService {
 		catch (NullPointerException nullException){
 			System.out.println("---retrurn null---");
 			return null;
-
 		}
-
 	}
 
 }

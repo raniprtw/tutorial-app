@@ -1,5 +1,6 @@
 package apap.tutorial.gopud.controller;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,16 +95,18 @@ public class RestoranController {
 	
 	 //URL mapping viewAll
 
-	 /*@RequestMapping("/restoran/viewall") public String viewall(Model model) {
+	 @RequestMapping(value="/restoran/view-all", method=RequestMethod.GET) public String viewAll(Model model) {
 
 		 //Mengambil semua objek RestoranModel yang ada List<RestoranModel>
-		 listRestoran = restoranService.getRestoranList();
+		 List<RestoranModel> listRestoran = restoranService.getRestoranList();
+
+		 Collections.sort(listRestoran);
 
 		 //Add model restoran ke "resto" untuk di render
 		 model.addAttribute("restoList", listRestoran);
 
-		 return "viewall-restoran";
-	}*/
+		 return "view-all";
+	}
 
 	 /**
 	 * @RequestMapping(

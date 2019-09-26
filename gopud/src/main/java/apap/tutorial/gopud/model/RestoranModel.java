@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="restoran")
-public class RestoranModel implements Serializable{
+public class RestoranModel implements Serializable, Comparable<RestoranModel>{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -83,6 +83,10 @@ public class RestoranModel implements Serializable{
 
 	public void removeName() {
 		this.nama = "";
+	}
+
+	@Override public int compareTo(RestoranModel comp){
+		return this.getNama().compareTo(comp.getNama());
 	}
 
 }
