@@ -124,7 +124,7 @@ public class RestoranController {
 	 public String delete(@PathVariable(value = "idRestoran") Long idRestoran, Model model ) {
 		 RestoranModel existingRestoran = restoranService.getRestoranByIdRestoran(idRestoran).get();
 		 restoranService.deleteRestoran(existingRestoran);
-		 return "view-all";
+		 return "delete-restoran";
 	 }
 
 }
