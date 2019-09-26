@@ -42,3 +42,13 @@ documentation terhadap sebuah projek
 
 4. Tambahkan 1 contoh restoran lainnya sesukamu. Lalu cobalah untuk mengakses http://localhost:8080/restoran/viewall, apa yang akan ditampilkan? 
 	https://drive.google.com/file/d/1PCnwWfxjZrHGv3Ou81d3aklzu6Z1OhxO/view?usp=sharing
+	
+## Tutorial 3
+1. Pada class MenuDb, terdapat method findByRestoranIdRestoran, apakah kegunaan dari
+method tersebut?
+2. Pada class RestoranController, jelaskan perbedaan method addRestoranFormPage dan
+addRestoranSubmit?
+3. Jelaskan apa kegunaan dari JPA Repository?
+4. Sebutkan dan jelaskan di bagian kode mana sebuah relasi antara RestoranModel dan
+MenuModel dibuat?
+5. Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL, dan FetchType.EAGER
