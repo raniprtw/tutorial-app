@@ -2,7 +2,7 @@ package apap.tutorial.gopud.service;
 
 import java.util.List;
 
-import com.apap.tutorial.gopud.repository.MenuDb;
+import apap.tutorial.gopud.repository.MenuDb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import apap.tutorial.gopud.model.MenuModel;
@@ -10,7 +10,7 @@ import apap.tutorial.gopud.model.MenuModel;
 @Service
 public class MenuServiceImpl implements MenuService{
 
-    //@Autowired
+    @Autowired
     private MenuDb menuDb;
 
     @Override

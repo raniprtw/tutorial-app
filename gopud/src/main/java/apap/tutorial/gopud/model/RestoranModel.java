@@ -9,11 +9,11 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name="restoran")
 public class RestoranModel implements Serializable{
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idRestoran;
-	
+
 	@NotNull
 	@Size(max=20)
 	@Column(name="nama", nullable=false)
@@ -79,11 +79,12 @@ public class RestoranModel implements Serializable{
 		return listMenu;
 	}
 
-	public void setListMenu(List<MenuModel> listMenu) {
-		this.listMenu = listMenu;
+	public void setListMenu(List<MenuModel> listMenu){}
+
+	public void removeName() {
+		this.nama = "";
 	}
-	
-	
+
 }
 
 /*package apap.tutorial.gopud.model;

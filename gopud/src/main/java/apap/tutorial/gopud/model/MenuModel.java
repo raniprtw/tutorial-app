@@ -14,6 +14,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name="menu")
 public class MenuModel implements Serializable {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -90,5 +91,7 @@ public class MenuModel implements Serializable {
 	public void setDurasiMasak(Integer durasiMasak) {
 		this.durasiMasak = durasiMasak;
 	}
+
+
 
 }

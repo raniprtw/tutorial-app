@@ -48,17 +48,17 @@ public class RestoranController {
 	@RequestMapping(value="/restoran/add", method=RequestMethod.POST)
 	public String addrestoranSubmit(@ModelAttribute RestoranModel restoran, Model model) {
 		restoranService.addRestoran(restoran);
+		//System.out.println(restoran.getNama());
 		model.addAttribute("namaResto", restoran.getNama());
-		return"add-restoran";
+		return "add-restoran";
 	}
 	
 	// URL mapping view
-	@RequestMapping(path="/restoran/view/", method=RequestMethod.GET)
+	@RequestMapping(path="/restoran/view", method=RequestMethod.GET)
 	public String view(
 			//Req parameter untuk dipass
 			@RequestParam(value = "idRestoran") Long idRestoran, Model model) {
-//		System.out.println(idRestoran);
-		
+
 		//Mengambil object RestoranModel yang dituju
 		RestoranModel restoran = restoranService.getRestoranByIdRestoran(idRestoran).get();
 
@@ -84,25 +84,28 @@ public class RestoranController {
 	@RequestMapping(value="restoran/change/{idRestoran}", method=RequestMethod.POST)
 	public String changeRestoranFormSubmit(@PathVariable Long idRestoran, 
 			@ModelAttribute RestoranModel restoran, Model model) {
+		System.out.println("---sebelum method changeRestoran---");
 		RestoranModel newRestoranData = restoranService.changeRestoran(restoran);
-		model.addAttribute("restoran", newRestoranData);
-		
+		System.out.println("---setelah method changeRestoran---");
+		System.out.println(newRestoranData.getNama());
+		model.addAttribute("nama", newRestoranData.getNama());
 		return "change-restoran";
 	}
 	
-	/*
-	 * //URL mapping viewAll
-	 * 
-	 * @RequestMapping("/restoran/viewall") public String viewall(Model model) {
-	 * 
-	 * //Mengambil semua objek RestoranModel yang ada List<RestoranModel>
-	 * listRestoran = restoranService.getRestoranList();
-	 * 
-	 * //Add model restoran ke "resto" untuk di render
-	 * model.addAttribute("restoList", listRestoran);
-	 * 
-	 * return "viewall-restoran"; }
-	 * 
+	 //URL mapping viewAll
+
+	 /*@RequestMapping("/restoran/viewall") public String viewall(Model model) {
+
+		 //Mengambil semua objek RestoranModel yang ada List<RestoranModel>
+		 listRestoran = restoranService.getRestoranList();
+
+		 //Add model restoran ke "resto" untuk di render
+		 model.addAttribute("restoList", listRestoran);
+
+		 return "viewall-restoran";
+	}*/
+
+	 /**
 	 * @RequestMapping(
 	 * "restoran/update/id-restoran/{idRestoran}/nomor-telepon/{nomorTelepon}")
 	 * public String updateNomorTelepon(
@@ -118,6 +121,5 @@ public class RestoranController {
 	 * 
 	 * @PathVariable(value = "idRestoran") String idRestoran, Model model ) {
 	 * restoranService.deleteRestoran(idRestoran); return viewall(model); }
-	 */
-			
+*/
 }

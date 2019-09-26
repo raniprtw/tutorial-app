@@ -46,9 +46,23 @@ documentation terhadap sebuah projek
 ## Tutorial 3
 1. Pada class MenuDb, terdapat method findByRestoranIdRestoran, apakah kegunaan dari
 method tersebut?
+Kegunaan dari method tersebut adalah mengembalikan selurus menu dari restoran yang diminta berdasarkan id-restoran
+
 2. Pada class RestoranController, jelaskan perbedaan method addRestoranFormPage dan
 addRestoranSubmit?
+yang pertama itu dia GET yang kedua dia POST. yang GET mengambil data dari server dan yang POST memasukkannya ke dalam DB
+
 3. Jelaskan apa kegunaan dari JPA Repository?
+Untuk memasukkan data java ke dalam realtional database dan juga untuk memanipulasi data (CURD) yang menggunakan JPA 
+
 4. Sebutkan dan jelaskan di bagian kode mana sebuah relasi antara RestoranModel dan
 MenuModel dibuat?
+Ada di MenuController. Jadi di membuat menu, lalu dicari restoran mana yang id nya sama. ketika ketemu, restoran tersebut akan di-set
+sebagai restoran menu tersebut
+
 5. Jelaskan kegunaan FetchType.LAZY, CascadeType.ALL, dan FetchType.EAGER
+-FetchType.LAZY digunakan untuk relasi one to many. FetchType.LAZY memberitahu kepada Hibernate untuk mengambil entities yang berhubungan
+dengan database itu saja. Jadi FetchType.LAZY hanya akan mendapatkan data dari suatu objeect atau tabel yang diminta tanpa mengambil 
+data-data dari seetiap tabel yang berlasi dengannya
+-CascadeType.All berarti dia akan melakukan semua action (PERSIST, REMOVE, REFRESH, MERGE, DETACH) kepada entity yang berhubungan tersebut.
+-FetchType.EAGER untuk nge-load menu with the rest of the fields(eagerly)

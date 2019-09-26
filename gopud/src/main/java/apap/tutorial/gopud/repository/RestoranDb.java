@@ -1,4 +1,4 @@
-package com.apap.tutorial.gopud.repository;
+package apap.tutorial.gopud.repository;
 
 import apap.tutorial.gopud.model.RestoranModel;
 import org.springframework.data.jpa.repository.JpaRepository;
