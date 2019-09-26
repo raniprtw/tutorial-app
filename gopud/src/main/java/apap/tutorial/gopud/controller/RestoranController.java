@@ -119,10 +119,12 @@ public class RestoranController {
 	 * RestoranModel restoran = restoranService.getRestoranByIdRestoran(idRestoran);
 	 * restoran.setNomorTelepon(nomorTelepon); model.addAttribute("resto",
 	 * restoran); return "view-restoran"; }
-	 * 
-	 * @RequestMapping("restoran/delete/id/{idRestoran}") public String delete(
-	 * 
-	 * @PathVariable(value = "idRestoran") String idRestoran, Model model ) {
-	 * restoranService.deleteRestoran(idRestoran); return viewall(model); }
 */
+	 @RequestMapping(value="restoran/delete/{idRestoran}", method=RequestMethod.GET)
+	 public String delete(@PathVariable(value = "idRestoran") Long idRestoran, Model model ) {
+		 RestoranModel existingRestoran = restoranService.getRestoranByIdRestoran(idRestoran).get();
+		 restoranService.deleteRestoran(existingRestoran);
+		 return "view-all";
+	 }
+
 }

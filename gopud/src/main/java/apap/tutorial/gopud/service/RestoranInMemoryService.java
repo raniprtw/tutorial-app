@@ -34,6 +34,11 @@ public class RestoranInMemoryService implements RestoranService{
 	}
 
 	@Override
+	public boolean deleteRestoran(RestoranModel restoran) {
+		return false;
+	}
+
+	@Override
 	public RestoranModel changeRestoran(RestoranModel restoranModel) {
 		// TODO Auto-generated method stub
 		return null;

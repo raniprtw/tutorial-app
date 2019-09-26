@@ -16,7 +16,7 @@ public interface RestoranService {
 	Optional<RestoranModel> getRestoranByIdRestoran(Long idRestoran);
 
 	//Method delete Restoran
-	//void deleteRestoran(String idRestoran);
+	boolean deleteRestoran(RestoranModel restoran);
 
 	// input nama restoran, return restoran, getRestoranByNamaRestoran
 	//RestoranModel getRestoranByNamaRestoran(String nama);

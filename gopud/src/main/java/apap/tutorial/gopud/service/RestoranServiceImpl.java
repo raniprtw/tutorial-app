@@ -35,6 +35,18 @@ public class RestoranServiceImpl implements RestoranService {
 		return restoranDb.findByIdRestoran(idRestoran);
 	}
 
+	@Override
+	public boolean deleteRestoran(RestoranModel restoran) {
+		if(restoran.getListMenu().size()==0){
+			restoranDb.delete(restoran);
+			return true;
+		}
+		else{
+			return false;
+		}
+
+	}
+
 	@Override public RestoranModel changeRestoran(RestoranModel restoranModel) {
 		// Mengambil object restoran yang ingin diubah
 		RestoranModel targetRestoran = restoranDb.findById(restoranModel.getIdRestoran()).get();
