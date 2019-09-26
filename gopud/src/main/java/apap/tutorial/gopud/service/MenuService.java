@@ -8,6 +8,7 @@ import apap.tutorial.gopud.model.MenuModel;
 public interface MenuService {
 	void addMenu(MenuModel menu);
 	List<MenuModel> findAllMenuByIdRestoran(long idRestoran);
-	MenuModel changeMenu(MenuModel MenuModel);
+	MenuModel changeMenu(MenuModel menuModel);
 	Optional<MenuModel> findMenuById(long id);
+	void deleteMenu(MenuModel menuModel);
 }

@@ -7,18 +7,19 @@
 <body>
 <h2>Change Data Restoran</h2>
 <form th:action="@{/menu/change/{id}(id=${menu.id})}" th:object="${menu}" method="POST">
-    <input type="hidden" th:field="${menu.id}"/>
-    Nama Menu : <br>
-    <input type="text", name="nama" th:value="${menu.nama}"/>
+    <input type="hidden" th:field="${menu.id}" />
+    Nama Makanan: <br>
+    <input type="text" name="nama" th:value="${menu.nama}" />
     <br>
-    Harga : <br>
-    <input type="number", name="harga" th:value="${menu.harga}"/>
+    Harga: <br>
+    <input type="number" name="harga" th:value="${menu.harga}" />
     <br>
-    Durasi Masak : <br>
-    <input type="number", name="durasiMasak" th:value="${menu.durasiMasak}"/>
+    Durasi masak: <br>
+    <input type="number" name="durasiMasak" th:value="${menu.durasiMasak}" />
     <br>
-    Deskripsi : <br>
-    <input type="text", name="deksripsi" th:value="${menu.deskripsi}"/>
+    Deskripsi: <br>
+    <input type="text" name="deskripsi" th:value="${menu.deskripsi}" />
+
     <br>
 
     <br><br>

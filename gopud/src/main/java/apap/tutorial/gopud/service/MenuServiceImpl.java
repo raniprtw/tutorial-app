@@ -28,25 +28,22 @@ public class MenuServiceImpl implements MenuService{
     }
 
     @Override public MenuModel changeMenu(MenuModel menuModel) {
-        // Mengambil object menu yang ingin diubah
         MenuModel targetMenu = menuDb.findById(menuModel.getId()).get();
-        System.out.println(menuModel.getDeskripsi());
-
         try {
-            //targetMenu.removeName(); DEKRIPSI DURASI HARGA NAMA
             targetMenu.setNama(menuModel.getNama());
+            targetMenu.setDeskripsi(menuModel.getDeskripsi());
             targetMenu.setHarga(menuModel.getHarga());
             targetMenu.setDurasiMasak(menuModel.getDurasiMasak());
-            targetMenu.setDeskripsi(menuModel.getDeskripsi());
-
             menuDb.save(targetMenu);
             return targetMenu;
-        }
-
-        catch (NullPointerException nullException){
-            System.out.println("---retrurn null---");
+        } catch (NullPointerException nullException) {
             return null;
         }
+
+    }
+
+    @Override public void deleteMenu(MenuModel menuModel){
+        menuDb.delete(menuModel);
     }
 
 }

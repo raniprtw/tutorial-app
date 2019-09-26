@@ -45,7 +45,7 @@ public class MenuController {
 	}
 
 	//API menuju halaman form change restoran
-	@RequestMapping(value="menu/change/{id}", method=RequestMethod.GET)
+	@RequestMapping(value = "menu/change/{id}", method = RequestMethod.GET)
 	public String changeMenuFormPage(@PathVariable Long id, Model model) {
 		MenuModel existingMenu = menuService.findMenuById(id).get();
 		model.addAttribute("menu", existingMenu);
@@ -53,14 +53,20 @@ public class MenuController {
 	}
 
 	//API untuk submit
-	@RequestMapping(value="menu/change/{id}", method=RequestMethod.POST)
-	public String changeRestoranFormSubmit(@PathVariable Long id,
-										   @ModelAttribute MenuModel menu, Model model) {
-		System.out.println(menu.getDeskripsi());
+	@RequestMapping(value = "menu/change/{id}", method = RequestMethod.POST)
+	public String changeMenuSubmit(@PathVariable Long id, @ModelAttribute MenuModel menu, Model model) {
 		MenuModel newMenuData = menuService.changeMenu(menu);
-		model.addAttribute("nama", newMenuData.getNama());
-		return "change-restoran";
+		model.addAttribute("menu", newMenuData);
+		return "change-menu";
 	}
-	
-	
+
+	//Delete menu
+	@RequestMapping(value = "menu/delete/{id}", method=RequestMethod.GET)
+	private String deleteMenu (@PathVariable Long id, @ModelAttribute MenuModel menu, Model model){
+		MenuModel deletedMenu = menuService.findMenuById(id).get();
+		model.addAttribute("menu", deletedMenu.getNama());
+		menuService.deleteMenu(deletedMenu);
+		return "delete-menu";
+	}
+
 }
