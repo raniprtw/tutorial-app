@@ -1,5 +1,6 @@
 package apap.tutorial.gopud.service;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Optional;
 
@@ -7,6 +8,8 @@ import apap.tutorial.gopud.repository.MenuDb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import apap.tutorial.gopud.model.MenuModel;
+
+import javax.swing.text.html.Option;
 
 @Service
 public class MenuServiceImpl implements MenuService{
@@ -44,6 +47,11 @@ public class MenuServiceImpl implements MenuService{
 
     @Override public void deleteMenu(MenuModel menuModel){
         menuDb.delete(menuModel);
+    }
+
+    @Override
+    public Optional<MenuModel> getMenuByNamaAndHarga(String nama, BigInteger harga) {
+        return menuDb.findMenuByNamaAndHarga(nama, harga);
     }
 
 }

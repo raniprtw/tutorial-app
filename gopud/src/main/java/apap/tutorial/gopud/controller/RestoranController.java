@@ -100,6 +100,7 @@ public class RestoranController {
 		 //Mengambil semua objek RestoranModel yang ada List<RestoranModel>
 		 List<RestoranModel> listRestoran = restoranService.getRestoranList();
 
+		 //ada method order by dari JPA nya findAllByOrderByXxxAsc
 		 Collections.sort(listRestoran);
 
 		 //Add model restoran ke "resto" untuk di render
