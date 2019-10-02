@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<nav th:replace="fragments/fragment :: navbar"></nav>
+<nav th:replace="fragments/fragment :: navbar (brand='Restoran Updated')"></nav>
     <h2 th:text="'Restoran dengan nama ' + ${nama} + ' berhasil diubah.'"></h2>
 </body>
 </html>

@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<nav th:replace="fragments/fragment :: navbar"></nav>
+<nav th:replace="fragments/fragment :: navbar (brand='Menu Deleted')" ></nav>
 <h2 th:text="'Menu dengan nama ' + ${menu} + ' berhasil dihapus.'"></h2>
 </body>
 </html>

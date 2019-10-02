@@ -18,7 +18,7 @@
 </head>
 
 <body>
-<nav th:replace="fragments/fragment :: navbar"></nav>
+<nav th:replace="fragments/fragment :: navbar (brand='Add Menu')"></nav>
     <h3>Tambah Produk</h3>
 
     <form th:action="@{/menu/add}" th:object="${menu}" method="POST">
