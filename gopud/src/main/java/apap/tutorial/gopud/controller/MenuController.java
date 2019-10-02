@@ -4,10 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import apap.tutorial.gopud.model.MenuModel;
 import apap.tutorial.gopud.model.RestoranModel;
@@ -61,12 +58,21 @@ public class MenuController {
 	}
 
 	//Delete menu
-	@RequestMapping(value = "menu/delete/{id}", method=RequestMethod.GET)
+/*	@RequestMapping(value = "menu/delete/{id}", method=RequestMethod.GET)
 	private String deleteMenu (@PathVariable Long id, @ModelAttribute MenuModel menu, Model model){
 		MenuModel deletedMenu = menuService.findMenuById(id).get();
 		model.addAttribute("menu", deletedMenu.getNama());
 		menuService.deleteMenu(deletedMenu);
 		return "delete-menu";
-	}
+	}*/
 
+	@RequestMapping(value="/menu/delete", method=RequestMethod.POST)
+	private String delete(@ModelAttribute RestoranModel restoran, Model model){
+		System.out.println("HALOOOOOOOOO AKU DEBUGGING  =======  " + restoran.getListMenu());
+		for (MenuModel menu : restoran.getListMenu()){
+			menuService.deleteMenu(menu.getId());
+		}
+		//model.addAttribute("menu", "Delete Menu");
+		return "delete-menu";
+	}
 }
