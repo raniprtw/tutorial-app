@@ -65,6 +65,7 @@ public class RestoranController {
 
 		List<MenuModel> menuList = menuService.getListMenuOrderByHargaAsc(restoran.getIdRestoran());
 		restoran.setListMenu(menuList);
+		System.out.println(restoran.getIdRestoran());
 
 		//Add model restoran ke "resto" untuk dirender
 		model.addAttribute("menuList", menuList);

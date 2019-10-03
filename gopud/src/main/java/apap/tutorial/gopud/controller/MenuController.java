@@ -58,18 +58,19 @@ public class MenuController {
 	}
 
 	//Delete menu
-/*	@RequestMapping(value = "menu/delete/{id}", method=RequestMethod.GET)
+	@RequestMapping(value = "menu/delete/{id}", method=RequestMethod.GET)
 	private String deleteMenu (@PathVariable Long id, @ModelAttribute MenuModel menu, Model model){
 		MenuModel deletedMenu = menuService.findMenuById(id).get();
 		model.addAttribute("menu", deletedMenu.getNama());
-		menuService.deleteMenu(deletedMenu);
+		menuService.deleteMenu(deletedMenu.getId());
 		return "delete-menu";
-	}*/
+	}
 
 	@RequestMapping(value="/menu/delete", method=RequestMethod.POST)
 	private String delete(@ModelAttribute RestoranModel restoran, Model model){
-		System.out.println("HALOOOOOOOOO AKU DEBUGGING  =======  " + restoran.getListMenu());
-		for (MenuModel menu : restoran.getListMenu()){
+		System.out.println(restoran.getIdRestoran());
+		for (MenuModel menu : menuService.getListMenuOrderByHargaAsc(restoran.getIdRestoran())){
+			System.out.println(menu);
 			menuService.deleteMenu(menu.getId());
 		}
 		//model.addAttribute("menu", "Delete Menu");

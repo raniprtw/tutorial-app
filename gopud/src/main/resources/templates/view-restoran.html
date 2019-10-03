@@ -34,6 +34,7 @@
                 <th>Deskripsi</th>
                 <th>Durasi Penyajian</th>
                 <th>Aksi</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -48,9 +49,9 @@
                     <input type="checkbox" th:field="*{listMenu}" th:value="${menu.id}"/>
                     <label th:for="${#ids.prev('listMenu')}">Hapus</label>
                 </td>
+                <td><a th:href="@{/menu/delete/id/}+${menu.id}">Hapus</a></td>
                 <!-- <td><a th:href="@{/menu/change/}+${menu.id}">Change Data Menu</a></td>
                 <br>
-                <td><a th:href="@{/menu/delete/id/}+${menu.id}">Delete Menu</a></td>
                 <br><br> -->
             </tr>
             </tbody>

@@ -66,3 +66,17 @@ dengan database itu saja. Jadi FetchType.LAZY hanya akan mendapatkan data dari s
 data-data dari seetiap tabel yang berlasi dengannya
 -CascadeType.All berarti dia akan melakukan semua action (PERSIST, REMOVE, REFRESH, MERGE, DETACH) kepada entity yang berhubungan tersebut.
 -FetchType.EAGER untuk nge-load menu with the rest of the fields(eagerly)
+
+## Tutorial 4
+1. Jelaskan yang anda pelajari dari melakukan latihan nomor 2, dan jelaskan tahapan bagaimana
+anda menyelesaikan latihan nomor 2
+Yang saya pelajari dari latihan nomor 2 adalah penggunaan '(brand)' yang bisa kita gunakan untuk menyesuaikan title navbar
+pada setiap halamannya dengan cara menabmahkan '(brand='Title Halaman')'
+2. Jelaskan yang anda pelajari dari latihan nomor 3, dan jelaskan tahapan bagaimana anda
+menyelesaikan latihan nomor 3
+
+3. Jelaskan perbedaan th:include dan th:replace
+Dengan th:include kita bisa meng-include semua konten dari fragment ke host tag-nya sedangkan th:replace akan
+membuat fragments menggantikan host tag-nya. Hal ini dapat membantu kiat dalam grouping fragments ke satu atau lebih halaman
+4. Jelaskan bagaimana penggunaan th:object beserta tujuannya
+th:object itu untuk menentukan dan meletakkan object apa yang akan dipakai sama di form nya
