@@ -44,7 +44,6 @@ public class RestoranServiceImpl implements RestoranService {
 		else{
 			return false;
 		}
-
 	}
 
 	@Override public RestoranModel changeRestoran(RestoranModel restoranModel) {

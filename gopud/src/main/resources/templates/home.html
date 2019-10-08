@@ -3,8 +3,62 @@
 
 <head>
     <title>Home</title>
+    <object th:include="fragments/fragment :: css" th:remove="tag"></object>
+    <object th:include="fragments/fragment :: js" th:remove="tag"></object>
+    <!--<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    &lt;!&ndash; jquery, ajax, and bootstrap.js &ndash;&gt;
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>-->
+
 </head>
 
+<body>
+    <nav th:replace="fragments/fragment :: navbar (brand='Home')"></nav>
+
+    <div class="container-fluid">
+        <h2>Selamat datang di GOPUD!</h2>
+        <button class="btn btn-primary">
+            <a th:href="@{restoran/view-all}" style="color: white">View All Restoran</a>
+        </button>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Tambah Restoran</div>
+                    <div class="card-body">
+                        <p>Fitur untuk menambah restoran</p>
+                        <button class="btn btn-primary">
+                            <a th:href="@{/restoran/add}" style="color: white">Tambah Restoran</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Cari Restoran Berdasarkan ID</div>
+                    <div class="card-body">
+                        <form th:action="@{/restoran/view}" method="GET">
+                            <label for="idRestoran">Id Restoran</label>
+                            <input type="text" name="idRestoran" class="form-control"/>
+                            <br>
+                            <button class="btn btn-primary" type="submit">Cari</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!--
 <body>
     <h2>Selamat datang di GOPUD!</h2>
     <h3>Tambah Restoran</h3>
@@ -20,5 +74,6 @@
 
     <td><a th:href="@{/restoran/view-all}">View All</a></td>
 </body>
+-->
 
 </html>

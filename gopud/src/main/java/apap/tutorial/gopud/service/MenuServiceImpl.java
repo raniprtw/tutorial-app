@@ -39,11 +39,20 @@ public class MenuServiceImpl implements MenuService{
         } catch (NullPointerException nullException) {
             return null;
         }
-
     }
 
-    @Override public void deleteMenu(MenuModel menuModel){
-        menuDb.delete(menuModel);
+    @Override public void deleteMenu(Long id){
+        menuDb.deleteById(id);
+    }
+
+    @Override
+    public List<MenuModel> getListMenuOrderByHargaAsc(Long idRestoran) {
+        return menuDb.findByRestoranIdRestoranOrderByHargaAsc(idRestoran);
+    }
+
+    @Override
+    public List<MenuModel> getMenuList() {
+        return menuDb.findAll();
     }
 
 }
