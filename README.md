@@ -84,6 +84,7 @@ th:object itu untuk menentukan dan meletakkan object apa yang akan dipakai sama 
 ## Tutorial 5
 1. Jelaskan bagian mana saja dari test yang dibuat pada latihan no 2 adalah given, when, dan and
 then.
+https://github.com/raniprtw/tutorial-app/issues/6#issuecomment-540600763
 Dengan mendeklarasikan given, when, dan and then. Pada given, saya menginisiasi RestoranModel dan ketika restoranService.getRestoranByIdRestoran(1L), 
 apa maka akan mengembalikan newRestoran sebagai RestoranModel yang telah diinisiasi. When dari segi test flow yang diuji adalah
 restoranService.getRestoranByIdRestoran(1L). Dan and then adalah hasil yang diharapkan seperti yang ada dalam codingan. lalu saya mem-verify
