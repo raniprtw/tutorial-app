@@ -84,12 +84,22 @@ th:object itu untuk menentukan dan meletakkan object apa yang akan dipakai sama 
 ## Tutorial 5
 1. Jelaskan bagian mana saja dari test yang dibuat pada latihan no 2 adalah given, when, dan and
 then.
+Dengan mendeklarasikan given, when, dan and then. Pada given, saya menginisiasi RestoranModel dan ketika restoranService.getRestoranByIdRestoran(1L), 
+apa maka akan mengembalikan newRestoran sebagai RestoranModel yang telah diinisiasi. When dari segi test flow yang diuji adalah
+restoranService.getRestoranByIdRestoran(1L). Dan and then adalah hasil yang diharapkan seperti yang ada dalam codingan. lalu saya mem-verify
+apakah restoranService ketika dipanggil sekali akan melakukan interaksi .getRestranByIdRestoran(1L)
+https://github.com/raniprtw/tutorial-app/issues/6#issue-505183144
 
 2. Jelaskan perbedaan line coverage dan logic coverage.
+Line coverage adalah kondisi dimana Conditions are connected by logical operators to make a decision. Sedangkan line coverage adalah 
+kondisi berapa line dari program kita yang tercover.
 
 3. Pada keadaan ideal, apa yang seharusnya dibuat terlebih dahulu, code atau unit test? Mengapa
 seperti itu? Apa akibatnya jika urutannya dibalik, adakah risiko tak terlihat yang mungkin
 terjadi?
+Idealnya yang dibuat terlebih dahulu adalah unit test. Agar jelas requirements nya, apa-apa saja fungsionalitas yang dibutuhkan program
+dan bagaimana program itu seharusnya bekerja. Apabila dilakukan secara terbalik maka kemungkinan akan ada requirements yang tertinggal
+sehingga tidak efektif dan efisien.
 
 4. [Bonus] Jelaskan mengapa pada latihan no 3, main class spring tidak diikutsertakan ke dalam
 perhitungan coverage? Apa saja yang dapat menyebabkan suatu class dapat di-exclude dari

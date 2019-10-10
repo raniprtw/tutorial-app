@@ -127,6 +127,6 @@ public class RestoranControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(content().string(Matchers.containsString("Informasi Restoran")))
                 .andExpect(content().string(Matchers.containsString("Daftar Menu:")));
-
+        verify(restoranService, times(1)).getRestoranByIdRestoran(1L);
     }
 }
