@@ -80,3 +80,17 @@ Dengan th:include kita bisa meng-include semua konten dari fragment ke host tag-
 membuat fragments menggantikan host tag-nya. Hal ini dapat membantu kiat dalam grouping fragments ke satu atau lebih halaman
 4. Jelaskan bagaimana penggunaan th:object beserta tujuannya
 th:object itu untuk menentukan dan meletakkan object apa yang akan dipakai sama di form nya
+
+## Tutorial 5
+1. Jelaskan bagian mana saja dari test yang dibuat pada latihan no 2 adalah given, when, dan and
+then.
+
+2. Jelaskan perbedaan line coverage dan logic coverage.
+
+3. Pada keadaan ideal, apa yang seharusnya dibuat terlebih dahulu, code atau unit test? Mengapa
+seperti itu? Apa akibatnya jika urutannya dibalik, adakah risiko tak terlihat yang mungkin
+terjadi?
+
+4. [Bonus] Jelaskan mengapa pada latihan no 3, main class spring tidak diikutsertakan ke dalam
+perhitungan coverage? Apa saja yang dapat menyebabkan suatu class dapat di-exclude dari
+perhitungan code coverage.
