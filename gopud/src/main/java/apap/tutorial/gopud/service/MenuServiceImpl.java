@@ -11,20 +11,14 @@ import apap.tutorial.gopud.model.MenuModel;
 @Service
 public class MenuServiceImpl implements MenuService{
 
-    @Autowired
-    private MenuDb menuDb;
+    @Autowired private MenuDb menuDb;
 
-    @Override
-    public void addMenu(MenuModel menu) {
+    @Override public void addMenu(MenuModel menu) {
 		menuDb.save(menu);
 	}
 
-    public List<MenuModel> findAllMenuByIdRestoran(long idRestoran) {
-        return menuDb.findByRestoranIdRestoran(idRestoran);
-    }
-
-    public Optional<MenuModel> findMenuById(long id){
-        return menuDb.findById(id);
+    @Override public List<MenuModel> getMenuList() {
+        return menuDb.findAll();
     }
 
     @Override public MenuModel changeMenu(MenuModel menuModel) {
@@ -41,18 +35,20 @@ public class MenuServiceImpl implements MenuService{
         }
     }
 
+    public List<MenuModel> findAllMenuByIdRestoran(long idRestoran) {
+        return menuDb.findByRestoranIdRestoran(idRestoran);
+    }
+
+    public Optional<MenuModel> findMenuById(long id){
+        return menuDb.findById(id);
+    }
+
     @Override public void deleteMenu(Long id){
         menuDb.deleteById(id);
     }
 
-    @Override
-    public List<MenuModel> getListMenuOrderByHargaAsc(Long idRestoran) {
+    @Override public List<MenuModel> getListMenuOrderByHargaAsc(Long idRestoran) {
         return menuDb.findByRestoranIdRestoranOrderByHargaAsc(idRestoran);
-    }
-
-    @Override
-    public List<MenuModel> getMenuList() {
-        return menuDb.findAll();
     }
 
 }

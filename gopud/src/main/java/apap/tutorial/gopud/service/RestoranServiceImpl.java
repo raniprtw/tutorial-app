@@ -35,8 +35,7 @@ public class RestoranServiceImpl implements RestoranService {
 		return restoranDb.findByIdRestoran(idRestoran);
 	}
 
-	@Override
-	public boolean deleteRestoran(RestoranModel restoran) {
+	@Override public boolean deleteRestoran(RestoranModel restoran) {
 		if(restoran.getListMenu().size()==0){
 			restoranDb.delete(restoran);
 			return true;
@@ -51,7 +50,7 @@ public class RestoranServiceImpl implements RestoranService {
 		RestoranModel targetRestoran = restoranDb.findById(restoranModel.getIdRestoran()).get();
 
 		try {
-			targetRestoran.removeName();
+			//targetRestoran.removeName();
 			targetRestoran.setNama(restoranModel.getNama());
 			targetRestoran.setAlamat(restoranModel.getAlamat());
 			targetRestoran.setNomorTelepon(restoranModel.getNomorTelepon());

@@ -1,5 +1,6 @@
 package apap.tutorial.gopud.controller;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -56,9 +57,7 @@ public class RestoranController {
 	
 	// URL mapping view
 	@RequestMapping(path="/restoran/view", method=RequestMethod.GET)
-	public String view(
-			//Req parameter untuk dipass
-			@RequestParam(value = "idRestoran") Long idRestoran, Model model) {
+	public String view(@RequestParam(value = "idRestoran") Long idRestoran, Model model) {
 
 		//Mengambil object RestoranModel yang dituju
 		RestoranModel restoran = restoranService.getRestoranByIdRestoran(idRestoran).get();
@@ -85,8 +84,7 @@ public class RestoranController {
 	
 	//API untuk submit
 	@RequestMapping(value="restoran/change/{idRestoran}", method=RequestMethod.POST)
-	public String changeRestoranFormSubmit(@PathVariable Long idRestoran, 
-			@ModelAttribute RestoranModel restoran, Model model) {
+	public String changeRestoranFormSubmit(@PathVariable Long idRestoran, @ModelAttribute RestoranModel restoran, Model model) {
 		System.out.println("---sebelum method changeRestoran---");
 		RestoranModel newRestoranData = restoranService.changeRestoran(restoran);
 		System.out.println("---setelah method changeRestoran---");
@@ -108,25 +106,28 @@ public class RestoranController {
 		 model.addAttribute("restoList", listRestoran);
 
 		 return "view-all";
+
 	}
 
 	 /**
 	 * @RequestMapping(
 	 * "restoran/update/id-restoran/{idRestoran}/nomor-telepon/{nomorTelepon}")
 	 * public String updateNomorTelepon(
-	 * 
+	 *
 	 * @PathVariable(value = "idRestoran") String idRestoran,
-	 * 
+	 *
 	 * @PathVariable(value = "nomorTelepon") Integer nomorTelepon, Model model ) {
 	 * RestoranModel restoran = restoranService.getRestoranByIdRestoran(idRestoran);
 	 * restoran.setNomorTelepon(nomorTelepon); model.addAttribute("resto",
 	 * restoran); return "view-restoran"; }
 */
+
 	 @RequestMapping(value="restoran/delete/{idRestoran}", method=RequestMethod.GET)
 	 public String delete(@PathVariable(value = "idRestoran") Long idRestoran, Model model ) {
 		 RestoranModel existingRestoran = restoranService.getRestoranByIdRestoran(idRestoran).get();
 		 restoranService.deleteRestoran(existingRestoran);
 		 return "delete-restoran";
 	 }
+
 
 }
