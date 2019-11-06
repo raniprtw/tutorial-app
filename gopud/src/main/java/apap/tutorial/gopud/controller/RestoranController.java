@@ -27,9 +27,9 @@ public class RestoranController {
 	
 	@Autowired
 	private MenuService menuService;
-
+/*
 	@RequestMapping("/")
-	public String home() {return "home";}
+	public String home() {return "home";}*/
 	
 	//URL mapping add
 	@RequestMapping(value="/restoran/add", method = RequestMethod.GET)
