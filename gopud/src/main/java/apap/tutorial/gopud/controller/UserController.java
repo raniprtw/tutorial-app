@@ -35,7 +35,7 @@ public class UserController {
 
         UserModel user = userRoleService.findUserByName(username);
         model.addAttribute("user", user);
-        return "form-change-password-user";
+        return "update-password";
 
     }
 
