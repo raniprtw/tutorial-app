@@ -105,3 +105,24 @@ sehingga tidak efektif dan efisien.
 4. [Bonus] Jelaskan mengapa pada latihan no 3, main class spring tidak diikutsertakan ke dalam
 perhitungan coverage? Apa saja yang dapat menyebabkan suatu class dapat di-exclude dari
 perhitungan code coverage.
+
+## Tutorial 7
+1. Jelaskan secara singkat perbedaan Otentikasi dan Otorisasi! Di bagian mana (dalam kode yang telah anda buat)
+konsep tersebut diimplementasi?
+Otentikasi adalah mekanisme yang digunakan untuk mengidentifikasi pengguna tertentu agar dapat mengakses sistem. 
+Sedangkan otorisasi merupakan proses memeriksa izin pengguna yang diotentikasi untuk mengakses fitur tertentu di sistem. 
+Mekanisme otentikasi dalam codingan adalah saat login dan proses otorisasi adalah saat hanya admin yang dapat melakukan penambah admin. 
+2. Apa itu BCryptPasswordEncoder? Jelaskan secara singkat cara kerjanya!
+Basically, BCryptPasswordEncoder merupakan fungsi untuk hashing password supaya yang tersimpan di database bukan literally password
+yang telah di-input user, sehingga password aman. Cara kerjan BCryptPasswordEncoder itu ada 2 fase. Pada fase pertama, bcrypt melakukan	
+derivasi key dimana nanti akan diperoleh satu subset key dari main key-nya. Pada fase kedua, 194-bit value di-enkripsi sebanyak 64 kali 
+dengan eksBlowFish. Output dari fase kedua ini ialah 'the cost' dan 128-bit salt value yang digabungkan dengan hasil dari hasil loop 
+yang sebelumnya.
+3. Jelaskan secara singkat apa itu UUID dan mengapa kita memakai UUID di UserModel.java?
+UUID ini akan membuat/generate ID / string yang unik setiap kita generate uuid baru. Kita menggunakan UUID di UserModel supaya id yang di
+generate sangat unik sehingga aman. (:
+4. Apa kegunaan class UserDetailsServiceImpl.java? Mengapa harus ada class tersebut padahal kita sudah
+ memiliki class UserRoleServiceImpl.java?
+UserDetailsServiceImpl.java berisi UI yang memuat data khusus pengguna. Perbedaanyya ada diletak packagenya dan kegunaanya.
+Kita harus punya UserDetailsServiceImpl.java agar lebih aman data penggunanya.
+
