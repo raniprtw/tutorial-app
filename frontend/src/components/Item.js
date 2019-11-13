@@ -1,9 +1,10 @@
 import React from "react";
 
 export default function Item(props){
-    const{item, onChange} = props;
-    const{nama, deskripsi, harga, checked} = props;
-    const handleChange = () => !!onChange && onChange({...item, checked: !checked});
+    const {item, onChange} = props;
+    const {nama, deskripsi, harga, checked} = item;
+    const handleChange = () => 
+    !!onChange && onChange({...item, checked: !checked});
 
     
     return (

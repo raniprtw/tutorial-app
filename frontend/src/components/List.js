@@ -7,7 +7,8 @@ export default function List({title, items, onItemClick}){
             <h3 style={styles.heading}>{title}</h3>
             <div className="list-group">
                 {}
-                {items.map(item => (<Item key={item.id} item={item} onChange={onItemClick}/>))}
+                {items.map(item => (
+                <Item key={item.id} item={item} onChange={onItemClick}/>))}
             </div>
         </>
     );
