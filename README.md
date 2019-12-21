@@ -126,3 +126,12 @@ generate sangat unik sehingga aman. (:
 UserDetailsServiceImpl.java berisi UI yang memuat data khusus pengguna. Perbedaanyya ada diletak packagenya dan kegunaanya.
 Kita harus punya UserDetailsServiceImpl.java agar lebih aman data penggunanya.
 
+##Tutorial 8
+1. Jelaskan apa yang Anda lakukan di latihan dalam satu paragraf per-soal. Berikan screenshot
+sebagai ilustrasi dari apa yang Anda jelaskan. (Saya baru lihat diminta screenshot namun sudah selesai, jadi saya lampirkan screenshot akhir)
+Soal 1 : Saya memodifikasi bagian input checkbox, ketika dia checked maka ada checkbox. Namun, apabila null maka tidak ada checkbpxnya
+Soal 2 : Saya menghapus kode yang berfungsi untuk menghapus satu menu dari targetInd sehingga Our Menu benar-benar hanya bisa menambahkan
+Soal 3 : Pertama-tama buat fungsi handleToggle yang berfungsi untuk melakukan hiding terhadap 'My Favorite', lalu ditambahkan ke constructor.
+Terakhir, implementasikan di-rendernya
+Soal 4 : Pertama-tama buat component EmptyState.js. Di dalam file tersebut kita render keluaran yang kita inginkan (sesuai yang di soal).
+Lalu pada App.js kita buat kondisi apabila list favorite kosong maka render-an empty state yang keluar.
